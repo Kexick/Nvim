@@ -71,7 +71,7 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "File tree", si
 vim.keymap.set("n", "<leader>ef", ":NvimTreeFindFileToggle<CR>", { desc = "Find file", silent = true })
 
 -- Fixed terminal
-vim.keymap.set("n", "<leader>t", ":FixedTerminal<CR>", { desc = "Open terminal (fixed height)", silent = true })
+-- vim.keymap.set("n", "<leader>t", ":FixedTerminal<CR>", { desc = "Open terminal (fixed height)", silent = true })
 
 vim.keymap.set("n", "<leader>r", function()
   require("utils.reload").reload_config()
@@ -86,3 +86,9 @@ vim.keymap.set("c", "<C-v>", '<C-r>+', { desc = "Paste clipboard (cmdline)" })
 vim.keymap.set("t", "<C-v>", function()
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-\\><C-n>"+pi', true, false, true), 'n', true)
 end, { desc = "Paste clipboard (terminal)", silent = true })
+
+vim.api.nvim_create_autocmd("CmdlineEnter", {
+    callback = function()
+        vim.keymap.set("c", "<leader>p", '<C-r>+', { buffer = true, desc = "Paste system clipboard in cmdline" })
+    end,
+})

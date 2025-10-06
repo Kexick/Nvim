@@ -37,7 +37,6 @@ if vim.g.neovide then
   vim.g.neovide_padding_bottom = 10
   vim.g.neovide_padding_right = 10
   vim.g.neovide_padding_left = 10
--- vim.opt.clipboard = "unnamedplus"
   -- You can add other Neovide settings if desired (e.g., transparency, font, etc.)
 end
 
