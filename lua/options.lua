@@ -37,6 +37,9 @@ if vim.g.neovide then
   vim.g.neovide_padding_bottom = 10
   vim.g.neovide_padding_right = 10
   vim.g.neovide_padding_left = 10
-  -- You can add other Neovide settings if desired (e.g., transparency, font, etc.)
+  vim.g.neovide_cursor_trail_size = 0.1         
+  vim.g.neovide_cursor_animation_length = 0.05   
+  vim.g.neovide_cursor_antialiasing = false       
+  vim.g.neovide_cursor_vfx_mode = ""
 end
 
